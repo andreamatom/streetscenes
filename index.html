@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon_p3/favicon-07.png">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300&display=swap" rel="stylesheet">
+
+
+    <title>Street Scenes</title>
+    <style>
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(8, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            width: 100vw;
+            height: 100vh;
+            transition: 1s;
+        }
+
+        .background-image1 {
+            background-image: url(pictures/street4.png);
+            background-repeat: no-repeat;
+            background-size: 100vw;
+        }
+
+        .grid div {
+            border: none;
+            background-size: cover;
+            transition: 1s;
+        }
+
+        .grid div:hover {
+			opacity:0%;
+			transition: 2s;
+		}
+
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .custom-cursor1 {
+            cursor: url('cursor.png'), auto;
+        }
+
+        button {
+			border: 1px solid black;
+			padding: 5px;
+			font-size: 17px;
+			background-color: rgb(239, 235, 235);
+			box-shadow: 1px 1px 0 #000000;
+			font-family: 'DM Mono', monospace;
+            cursor: url('cursor.png'), auto;
+            position: relative;
+            z-index: 9;
+		}
+
+        button:hover {
+            background-color: rgb(255, 101, 29);
+			box-shadow: 4px 4px 0 black;
+			transform: translate(-2px, -2px);
+            cursor: url('cursor.png'), auto;
+		}
+
+        button:active {
+			box-shadow: 1px 1px 0 #000000;
+            transform: unset;
+		}
+
+        .buttons-top {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+
+    </style>
+</head>
+
+<body class="custom-cursor1 background-image1">
+
+
+
+    <div class="buttons-top">
+        <button onclick="playAudioForever('audio/steps2.mp3')">Start Your Walk</button>
+        <a href="website2.html">
+            <button>Continue Your Walk</button>
+        </a>
+        <br>
+
+
+    <script>
+        var audio = new Audio();
+    
+        function playAudioForever(audioFile) {
+            audio.src = audioFile;
+            audio.play();
+            audio.addEventListener('ended', function () {
+                audio.currentTime = 0;
+                audio.play();
+            });
+        }
+       
+    
+    </script>
+
+
+
+    <div class="grid">
+        <div onmouseenter="changeImage(this)"></div>
+        <div onmouseenter="changeImage(this)"></div>
+        <div onmouseenter="changeImage(this)"></div>
+        <div onmouseenter="changeImage(this)"></div>
+        <div onmouseenter="changeImage(this)"></div>
+        <div onmouseenter="changeImage(this)"></div>
+        <div onmouseenter="changeImage(this)"></div>
+        <div onmouseenter="changeImage(this)"></div>
+        <div onmouseenter="changeImage(this)"></div>
+        <div onmouseenter="changeImage(this)"></div>
+        <div onmouseenter="changeImage(this)"></div>
+        <div onmouseenter="changeImage(this)"></div>
+        <div onmouseenter="changeImage(this)"></div>
+        <div onmouseenter="changeImage(this)"></div>
+        <div onmouseenter="changeImage(this)"></div>
+        <div onmouseenter="changeImage(this)"></div>
+        <div onmouseenter="changeImage(this)"></div>
+        <div onmouseenter="changeImage(this)"></div>
+        <div onmouseenter="changeImage(this)"></div>
+        <div onmouseenter="changeImage(this)"></div>
+        <div onmouseenter="changeImage(this)"></div>
+        <div onmouseenter="changeImage(this)"></div>
+        <div onmouseenter="changeImage(this)"></div>
+        <div onmouseenter="changeImage(this)"></div>
+        <div onmouseenter="changeImage(this)"></div>
+        <div onmouseenter="changeImage(this)"></div>
+        <div onmouseenter="changeImage(this)"></div>
+        <div onmouseenter="changeImage(this)"></div>
+        <div onmouseenter="changeImage(this)"></div>
+        <div onmouseenter="changeImage(this)"></div>
+        <div onmouseenter="changeImage(this)"></div>
+        <div onmouseenter="changeImage(this)"></div>
+        <div onmouseenter="changeImage(this)"></div>
+        <div onmouseenter="changeImage(this)"></div>
+        <div onmouseenter="changeImage(this)"></div>
+        <div onmouseenter="changeImage(this)"></div>
+        <div onmouseenter="changeImage(this)"></div>
+        <div onmouseenter="changeImage(this)"></div>
+        <div onmouseenter="changeImage(this)"></div>
+        <div onmouseenter="changeImage(this)"></div>
+        <div onmouseenter="changeImage(this)"></div>
+
+    </div>
+    <script>
+        let imageOptions = [
+            'pictures/street1.png',
+            'pictures/street2.png',
+            'pictures/street3.png',
+            'pictures/street4.png',
+            'pictures/street5.png',
+            'pictures/street6.png',
+            'pictures/street7.png',
+            'pictures/street8.png',
+            'pictures/street9.png',
+            'pictures/street10.png',
+            'pictures/street11.png',
+            'pictures/street12.png',
+
+        ];
+
+        var grid = document.querySelector('.grid');
+
+        function changeImage(element) {
+            var index = Math.floor(Math.random() * imageOptions.length);
+            var entry = imageOptions[index];
+            element.style.backgroundImage = "url(" + entry + ")";
+
+            element.style.backgroundSize = Math.random() * 1000 + "px ";
+
+
+        }
+
+    </script>
+
+</body>
+</html>

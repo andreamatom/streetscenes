@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Street Scenes</title>
+    <link rel="icon" href="favicon_p3/favicon-02.png">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        .website2container {
+            width: 100vw;
+            height: 100vh;
+            overflow: hidden;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .website2container div {
+            position: absolute;
+            transition: 1s;
+        }
+
+        .backgroundimage2 {
+            background-image: url(pictures/street2.png);
+            background-repeat: no-repeat;
+            background-size: 100vw;
+        }
+
+        .custom-cursor1 {
+            cursor: url('cursor.png'), auto;
+        }
+    
+        button {
+			border: 1px solid black;
+			padding: 5px;
+			font-size: 17px;
+			background-color: rgb(239, 235, 235);
+			box-shadow: 1px 1px 0 #000000;
+			/* margin: 10px 0px; */
+			font-family: 'DM Mono', monospace;
+            cursor: url('cursor.png'), auto;
+            /* margin: 8px; */
+            position: relative;
+            z-index: 9;
+		}
+
+        button:hover {
+            background-color: rgb(255, 123, 0);
+			box-shadow: 4px 4px 0 black;
+			transform: translate(-2px, -2px);
+            cursor: url('cursor.png'), auto;
+		}
+
+        button:active {
+			box-shadow: 1px 1px 0 #000000;
+            transform: unset;
+		}
+
+
+        .buttons-top {
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .buttons-bottom {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+        }
+
+    </style>
+</head>
+<body class="backgroundimage2 custom-cursor1">
+
+<div class="buttons-top">
+	<button onclick="playAudio('audio/car.mp3')">Walking </button>
+    <br>
+    <button onclick="playAudio('audio/people.mp3')">shares with making and working </button>
+    <br>
+    <button onclick="playAudio('audio/traffic.mp3')">that crucial element of </button>
+    <br>
+    <button onclick="playAudio('audio/birds.mp3')">engagement of the body </button>
+    <br>
+    <button onclick="playAudio('audio/siren.mp3')">and the mind </button>
+    <br>
+    <button onclick="playAudio('audio/steps2.mp3')">with the world</button>
+    <br>
+    <button onclick="playAudio('audio/truck.mp3')">of knowing the world </button>
+    <br>
+    <button onclick="playAudio('audio/motorcycle.mp3')">through the body </button>
+    <br>
+    <button onclick="playAudio('audio/playground.mp3')">and the body  </button>
+    <br>
+    <button onclick="playAudio('audio/talking.mp3')">through the world</button>
+</div>
+
+<div class="buttons-bottom">
+    <button onclick="playAudio('audio/cardinal.mp3')">From</button>
+    <button onclick="playAudio('audio/steps.mp3')"><em>Wanderlust</em> by Rebecca Solnit</button>
+    <a href="index.html">
+        <button>Continue Your Walk</button>
+    </a>
+</div>
+
+<div class="website2container backgroundimage2"></div>
+
+	<script>
+        var audio = new Audio();
+		function playAudio(fileName) {
+            audio.pause();
+			audio = new Audio(fileName);
+			audio.play();
+		}
+
+        let imageOptions = [
+        'pictures/street1.png',
+            'pictures/2_1.png',
+            'pictures/2_2.png',
+            'pictures/2_3.png',
+            'pictures/2_4.png',
+            'pictures/2_5.png',
+            'pictures/2_6.png',
+            'pictures/2_7.png',
+            'pictures/2_8.png',
+            'pictures/2_9.png',
+            'pictures/2_10.png',
+            'pictures/2_11.png',
+            'pictures/2_12.png',
+            'pictures/2_13.png',
+            'pictures/2_14.png',
+            'pictures/2_15.png',
+            'pictures/2_16.png',
+            'pictures/2_17.png',
+            'pictures/2_18.png',
+            'pictures/2_19.png',
+            'pictures/2_20.png',
+            'pictures/2_21.png',
+        
+           
+        ];
+
+        var website2container = document.querySelector('.website2container');
+
+        function changeImage() {
+            var index = Math.floor(Math.random() * imageOptions.length);
+            var entry = imageOptions[index];
+            var element = document.querySelector('.website2container div');
+            element.style.backgroundImage = "url(" + entry + ")";
+        }
+
+        for (var i = 0; i < 30; i++) {
+            var positionTop = Math.random() * 80;
+            var positionLeft = Math.random() * 80;
+            var elementWidth = Math.random() * 800;
+            var elementHeight = Math.random() * 500;
+            var elementRotation = Math.random() * 360;
+
+            website2container.innerHTML += `<div style="background-image: url('${imageOptions[Math.floor(Math.random()*imageOptions.length)]}'); top: ${positionTop}%; left: ${positionLeft}%; width: ${elementWidth}px; height: ${elementHeight}px; transform: rotate(${elementRotation}deg)" onmouseenter="changeSettings(this)"></div>`;
+        }
+
+        function changeSettings(element) {
+            var positionTop = Math.random() * 80;
+            var positionLeft = Math.random() * 80;
+            element.style.top = positionTop + "%";
+            element.style.left = positionLeft + "%";
+
+            var elementWidth = Math.random() * 800;
+            var elementHeight = Math.random() * 500;
+            element.style.width = elementWidth + "px";
+            element.style.height = elementHeight + "px";
+
+            var elementRotation = Math.random() * 360;
+            element.style.transform = `rotate(${elementRotation}deg)`;
+        }
+
+
+    </script>
+  
+</body>
+</html>
