@@ -82,17 +82,17 @@
     <br>
     <button onclick="playAudio('audio/people.mp3')">shares with making and working </button>
     <br>
-    <button onclick="playAudio('audio/traffic.mp3')">that crucial element of </button>
+    <button onclick="playAudio('audio/bells.mp3')">that crucial element of </button>
     <br>
-    <button onclick="playAudio('audio/birds.mp3')">engagement of the body </button>
+    <button onclick="playAudio('audio/traffic.mp3')">engagement of the body </button>
     <br>
     <button onclick="playAudio('audio/siren.mp3')">and the mind </button>
     <br>
-    <button onclick="playAudio('audio/steps2.mp3')">with the world</button>
+    <button onclick="playAudio('audio/drums.mp3')">with the world</button>
     <br>
-    <button onclick="playAudio('audio/truck.mp3')">of knowing the world </button>
+    <button onclick="playAudio('audio/vendor.mp3')">of knowing the world </button>
     <br>
-    <button onclick="playAudio('audio/motorcycle.mp3')">through the body </button>
+    <button onclick="playAudio('audio/motorcyle.mp3')">through the body </button>
     <br>
     <button onclick="playAudio('audio/playground.mp3')">and the body  </button>
     <br>
@@ -160,7 +160,7 @@
             var elementHeight = Math.random() * 500;
             var elementRotation = Math.random() * 360;
 
-            website2container.innerHTML += `<div style="background-image: url('${imageOptions[Math.floor(Math.random()*imageOptions.length)]}'); top: ${positionTop}%; left: ${positionLeft}%; width: ${elementWidth}px; height: ${elementHeight}px; transform: rotate(${elementRotation}deg)" onmouseenter="changeSettings(this)"></div>`;
+            website2container.innerHTML += `<div style="background-image: url('${imageOptions[Math.floor(Math.random()*imageOptions.length)]}'); top: ${positionTop}%; left: ${positionLeft}%; width: ${elementWidth}px; height: ${elementHeight}px; transform: rotate(${elementRotation}deg)" onmouseenter="changeSettings(this);"></div>`;
         }
 
         function changeSettings(element) {
